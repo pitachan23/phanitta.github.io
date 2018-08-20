@@ -44,13 +44,8 @@ ul.posts li {
     list-style: none;
 }
 
-.left-column {
+.column {
     float: center;
-    width: 50%;
-}
-
-.right-column {
-    float: left;
     width: 50%;
 }
 
