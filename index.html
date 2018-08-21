@@ -6,6 +6,7 @@
 		<!-- link to main stylesheet -->
 		<link rel="stylesheet" type="text/css" href="/css/main.css">
     	</head>
+	
     	<body>
 		<nav>
 			<ul>
@@ -16,42 +17,52 @@
                   	</ul>
               	</nav>
 		
+		/* CSS */
+		<style>
+			* {
+			    box-sizing: border-box;
+			}
+
+			/* Create two unequal columns that floats next to each other */
+			.column {
+			    float: left;
+			    padding: 10px;
+			}
+
+			.left {
+			  width: 50%;
+			  float: center;
+			}
+
+			.right {
+			  width: 50%;
+			  float: left;
+			}
+
+			/* Clear floats after the columns */
+			.row:after {
+			    content: "";
+			    display: table;
+			    /*clear: both;*/
+			}
+		</style>
+
+		<h2>Two Columns</h2>
+
 		<div class="row">
-			<div class="column">
+			<div class="column right">
+				<h2> Hello World </h2>
 				<img src="/index_files/github-profile-image.jpg" alt="" width="200" height="200">
-			</div>
-			<div class="column">		
+
+    			</div>
+			<div class="column left">		
 				<h2> Phanitta Chomsinsap </h2>
 				<p> 
 					B.S. in Electrical Engineering <br>
 					University of California, Santa Barbara
 				</p>
 			</div>
-		</div>
-	    
+		</div> 
 		
-		
-              <div class="container">
-                  <div class="blurb">
-			  <h1>Phanitta Chomsinsap</h1>
-			  <p>	B.S. in Electrical Engineering <br>
-		      		University of California, Santa Barbara 
-			  </p>
-			  <p>About Me</p>
-			  <p>My name is Phanitta. I just recently graduated from UCSB with a B.S. in Electrical Engineering. 
-			     I'm currently looking for a full-time position hoping to work on interesting and challenging projects. 
-		             I would love to work at a company or institution that's working towards medical/art/gaming applications 
-			     where I can apply my research, programming, and machine learning skills.
-			  </p>
-                  </div><!-- /.blurb -->
-              </div><!-- /.container -->
-              <footer>
-                  <ul>
-                      <li><a href="mailto:pchomsinsap@gmail.com">[Email]</a></li>
-                      <li><a href="https://github.com/phanitta">[GitHub]</a></li>
-                </ul>
-              </footer>
-    </body>
-    
-
+	</body>
 </html>
