@@ -30,8 +30,7 @@ for i = 1:mPatches
     for j = 1:nPatches
         % image name will be for ex. 1-outputs, 2-outputs, ...
         % these image patches are outputs of the GAN 
-        %imgName = strcat(num2str(index),'-outputs'); 
-        imgName = num2str(index);
+        imgName = strcat(num2str(index),'-outputs'); 
         
         if exist(strcat(readPath,imgName,fileType), 'file')
             im = double(imread(strcat(readPath,imgName,fileType)));
