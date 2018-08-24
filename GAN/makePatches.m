@@ -2,7 +2,7 @@ close all
 clc
 
 readPath = 'input_folder\';  
-writePath = 'output_folder_patches\';
+writePath = 'patches_folder\';
 fileType = '.jpg'; 
 imgName = 'image_name';
 im = imread(strcat(readPath,imgName,fileType));
