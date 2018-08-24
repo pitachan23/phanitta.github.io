@@ -46,7 +46,7 @@ for i = 1:old_nfiles
             im = im(:,p1:p2,:);
             
         else % curr_ratio == 2
-            im = imresize(im, [0.5 0.5]);
+            im = imresize(im, 0.5);
         end
         
     end
