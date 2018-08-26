@@ -46,7 +46,7 @@ void Game::showBoard() {
 	for (int i = 0; i < 3; i++) {
 		for (int j = 0; j < 3; j++) {
 			if (gameBoard[i][j].empty()) {
-				std::cout << "e" << " "; // correct the formatting
+				std::cout << " " << " "; // correct the formatting
 			}
 			else {
 				std::cout << gameBoard[i][j] << " ";
@@ -454,50 +454,3 @@ bool Game::isCorner(int move) {
 	}
 	return state;
 }
-
-
-			/*
-			// check hor
-			if (symbol == getSymbol(edge[i][1]) && isEmpty(edge[i][2])) {
-				bestMove = edge[i][2];
-			}
-			else if (symbol == getSymbol(edge[i][2]) && isEmpty(edge[i][1])) {
-				bestMove = edge[i][1];
-			}
-			// check ver
-			else if (symbol == getSymbol(edge[i][3]) && isEmpty(edge[i][4])) {
-				bestMove = edge[i][4];
-			}
-			else if (symbol == getSymbol(edge[i][4]) && isEmpty(edge[i][3])) {
-				bestMove = edge[i][3];
-			}
-		
-
-
-	// check corner
-	for (int i = 0; i < 4; i++) {
-		move = corner[i][0];
-		symbol = getSymbol(move);
-		// check hor
-		if (symbol == getSymbol(corner[i][1]) && isEmpty(corner[i][2])) {
-			bestMove = corner[i][2];
-		}
-		else if (symbol == getSymbol(corner[i][2]) && isEmpty(corner[i][1])) {
-			bestMove = corner[i][1];
-		}
-		// check ver
-		else if (symbol == getSymbol(corner[i][3]) && isEmpty(corner[i][4])) {
-			bestMove = corner[i][4];
-		}
-		else if (symbol == getSymbol(corner[i][4]) && isEmpty(corner[i][3])) {
-			bestMove = corner[i][3];
-		}
-		// check diagonal
-		else if (symbol == getSymbol(corner[i][5]) && isEmpty(corner[i][6])) {
-			bestMove = corner[i][6];
-		}
-		else if (symbol == getSymbol(corner[i][6]) && isEmpty(corner[i][5])) {
-			bestMove = corner[i][5];
-		}
-	}
-	*/
