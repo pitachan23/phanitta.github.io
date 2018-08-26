@@ -15,6 +15,11 @@ When the state of the game is incomplete, this means that 1) the game is not yet
 
 The <strong>run()</strong> will continue to loop while game is incomplete. Each time the game will check for nextPlayer, which is either "computer" or "player." The nextPlayer variable is first initialized when the Game constructor is called in the main program. The game randomly selects who goes first. The player has a choice whether he or she wants to play "x" or "o." The symbol selection will be stored in variables playerPick and compPick for the player and the computer respectively. When it's the computer's turn, it will try to get the next best move (getBestMove()) and make a move (makeMove(int row, int col, string symbol)) if the position is already not occupied. Similar things happen during the player's turn, but instead the player receives the input for the position (row/col) through the command line and make a move as long as the chosen position is empty. The function isEmpty(int row, int col) returns true if empty, otherwise returns false.
 
-The mechanics of the game is very straightforward so far. The most complicated part of the game is writing the function getBestMove() for the AI player. Alternatively, if a player wants to plays in an easy mode, he or she may choose to replace getBestMove() with getRandMove(), which returns a random move. The best move include these considerations:
-1) jd
-2)
+The mechanics of the game is very straightforward so far. The most complicated part of the game is writing the function getBestMove() for the AI player. Alternatively, if a player wants to plays in an easy mode, he or she may choose to replace getBestMove() with getRandMove(), which returns a random move. The best move include these considerations ranking in descending order:
+1) The center position
+2) A blocking move to prevent an opponent from winning, or a winning move that will make a sequence 3
+3) When the above two conditions are not met, it's best to place the symbol along the same row/col/diag as the one that is already there to increase the chance of winning. 
+4) If all of the above conditions are not satisfied, the computer finds a corner. If all corners are occupied, then it chooses an edge.
+
+[include diagram]
+
