@@ -83,7 +83,7 @@
 			}
 
 			/* Create two unequal columns that floats next to each other */
-			.column {
+			.column-header {
 				float: left;
 				padding: 0px;
 			}
@@ -96,16 +96,15 @@
 				width: 50%;
 			}
 			
-			.left {
-				width: 30%;
-			}
-			
-			.middle {
-				width: 35%;
+			* {
+			    box-sizing: border-box;
 			}
 
-			.right {
-				width: 30%;
+			/* Create three equal columns that floats next to each other */
+			.column {
+			    float: left;
+			    width: 33.33%;
+			    padding: 10px;
 			}
 
 			/* Clear floats after the columns */
@@ -197,7 +196,7 @@
 		
 
 		<div class="row header">
-			<div class="column left-header">
+			<div class="column-header left-header">
 				<img src="/index_files/github-profile-image.jpg" alt="" width="200" height="200" style="margin-left: 7em">
     			</div>
 			<div class="column right-header center">
@@ -343,39 +342,26 @@
 					I have received to students who require need-based financial aid, as well as provide essay writing
 					tips and answer any questions asked by students and the advisor. 
 				</font><br>
-				<div class="row header center">
-					<div class="column left single-space">
+				
+				<div class="row">
+					<div class="column" style="background-color:#aaa;">
 						<img src="/index_files/thai-festival.jpg" alt="" height="250"><br>
-						<p  class="caption">Thai Dance at Thai Festival<br>
-						
-						</p>
-						<br>
-						<br>
-						<br>
-						<br>
-						<br>
-					</div>
-					<div class="column middle single-space">
-						<img src="/index_files/tea-ceremony.jpg" alt="" height="250"><br>
-						<p  class="caption">Tea Ceremony</p><br>
-						<font class="text-small">
-							Being able to perform the traditional Thai <br>
-							dance was really amazing. <br>
-						</font><br>
-					</div>
-					<div class="column right single-space">	
-						<img src="/index_files/planting.jpg" alt="" height="250"><br>
-						<p  class="caption">Tree Planting at Arahama</p><br>
-						<font class="text-small">
-							This field trip was part of a collective <br>
-							rebuilding effort and action aimed to reduce <br>
-							damage from
+				    		<p>Thai Dance at Thai Festival</p>
+				  	</div>
+				  	<div class="column" style="background-color:#bbb;">
+				    		<img src="/index_files/tea-ceremony.jpg" alt="" height="250"><br>
+				    		<p>Tea Ceremony</p>
+				  	</div>
+				  	<div class="column" style="background-color:#ccc;">
+				    		<img src="/index_files/planting.jpg" alt="" height="250"><br>
+				    		<p>Tree Planting at Arahama<br>
+							This field trip was part of a collective rebuilding effort and action aimed to reduce damage from
 							a future tsunami by building the tsunami embarkment. I found this field trip special and insightful 
 							because of the fact that I was able to go to the actual site, see the impact of the 2011 tsunami, 
-							and make a difference by planting the saplings. 
-						</font><br>
-					</div>
-				</div> 
+							and make a difference by planting the saplings.
+						</p>
+				  	</div>
+				</div>
 				<br><br>
 			</p>
 			<p class="justify">
