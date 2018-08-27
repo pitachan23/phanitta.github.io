@@ -1,0 +1,181 @@
+
+			body {
+				background:url(/index_files/stars.png) repeat;
+				background-attachment: fixed;
+				font-family:'Helvetica', 'Arial', 'Sans-Serif';
+			}
+			
+			a {
+				text-decoration:none;
+				color: #2980B9; /* blue */
+			}
+			
+			a:hover {
+				color: #F7DC6F; /* mouse over yellow */
+			}
+			
+			h1, h2 {
+				font-weight: normal;
+			}
+			
+			p {
+				font-size:16px;
+				margin: 0;
+			}
+			
+			.center {
+				text-align: center;
+			}
+				
+			.tab {
+				margin-left: 1.5em;
+				display:inline-block;
+				line-height: 1px;
+			}
+			
+			.header {
+				max-width: 880px;
+				margin: auto;
+				background: white; /*#EAF2F8;*/
+				padding: 20px;
+			}
+			
+			.content {
+				max-width: 880px;
+				margin: auto;
+				background: white;
+				padding: 20px;
+				width: 100%;
+			}
+			
+			.contact {
+				padding-left:5em
+				color: #999;
+			}
+			
+			.caption {
+				font-size:14px;
+			}
+			
+			nav ul {
+				padding: 0px;
+				list-style: none;
+				font-weight: bold;
+			}
+
+			nav ul li {
+				display: inline;
+				margin-right: 20px;  
+			}
+			
+			* {
+				box-sizing: border-box;
+			}
+
+			/* Create two unequal columns that floats next to each other */
+			.column-header {
+				float: left;
+				padding: 0px;
+			}
+			
+			.left-header { 
+				width: 50%;
+			}
+			
+			.right-header { 
+				width: 50%;
+			}
+			
+			* {
+			    box-sizing: border-box;
+			}
+
+			/* Create three equal columns that floats next to each other */
+			.column-three {
+			    float: left;
+			    width: 33.33%;
+			    padding: 10px;
+			}
+			
+			.column-two {
+			    float: left;
+			    width: 50%;
+			    padding: 10px;
+			}
+
+			/* Clear floats after the columns */
+			.row:after {
+				content: "";
+				display: table;
+				clear: both;
+			}
+			
+			footer {
+				border-top: 1px solid #d5d5d5;
+				font-size: .8em;
+
+			}
+			
+			.button {
+				border: none;
+				color: white;
+				text-align: center;
+				text-decoration: none;
+				display: inline-block;
+				font-size: 10px;
+				border-radius: 4px;
+				vertical-align: text-top;
+			}
+			
+			.cpp {
+				background-color: #9900FF; /* dark purple */
+				padding: 2px 3px;
+			}
+			
+			.matlab {
+				background-color: #f44336; /* Red */
+				padding: 2px 5px;
+			}
+			
+			.python {
+				background-color: #FFCC00; /* Yellow */
+				padding: 2px 5px;
+			}
+			
+			.sdl {
+				background-color: #008CBA; /* Blue */
+				padding: 2px 3px;
+			}
+			
+			.verilog {
+				background-color: #555555; /* Black */
+				padding: 2px 5px;
+			}
+			
+			.arduino {
+				background-color: #00CC99; /* Blueish green */
+				padding: 2px 5px;	
+			}
+			
+			.tensorflow {
+				background-color: #FF6600; /* Orange */
+				padding: 2px 6px;
+			}
+			
+			.vs {
+				background-color: #b366ff; /* Light purple */
+				padding: 2px 6px;
+			}
+			
+			.justify {
+				text-align: justify;
+   				text-justify: inter-word;
+			}
+			
+			.text-small {
+				font-size: 14px;
+			}
+			
+			.text-very-small {
+				font-size: 12px;
+			}
