@@ -22,8 +22,10 @@ Game::Game() {
 
 Game::~Game() {
 	for (int i = 0; i < blockCount; i++) {
-		delete (pBlock + 1); // pTexture[i]
+		delete vBlock.at(i);
+		//delete (pBlock + 1); // pTexture[i]
 	}
+	vBlock.clear();
 }
 
 // initialize window and renderer pointers
@@ -106,10 +108,10 @@ void Game::update() {
 
 void Game::render() {
 	SDL_RenderClear(ren);
-	
 	// render all blocks
 	for (int i = 0; i < blockCount; i++) {
-		pBlock[i]->renderBlock(ren);
+		//pBlock[i]->renderBlock(ren);
+		vBlock.at(i)->renderBlock(ren);
 	}
 
 	SDL_RenderPresent(ren);
@@ -199,7 +201,8 @@ void Game::removeRow(std::vector<int> rVec) {
 		for (int i = 0; i < blockCount; i++) {
 			for (int j = 0; j < screenWidth; j += w) {
 
-				pBlock[i]->destroyTexture(row, j);
+				//pBlock[i]->destroyTexture(row, j);
+				vBlock.at(i)->destroyTexture(row, j);
 				// update occupancy
 				removeOcc(row, j);
 			}
@@ -226,10 +229,6 @@ void Game::checkGameOver() {
 	}
 }
 
-///////////////////////////////////////
-///////////////////////////////////////
-///////////////////////////////////////
-
 void Game::createBlock() {
 	if (releaseNewBlock) {
 		blockType = rand() % 7; // generate rand number between 0 to 6
@@ -253,7 +252,10 @@ void Game::createBlock() {
 			}
 		}
 
-		pBlock[blockCount] = new Block(row, col, w, h, fileName[blockType], ren);
+		//pBlock[blockCount] = new Block(row, col, w, h, fileName[blockType], ren);
+		Block* p = new Block(row, col, w, h, fileName[blockType], ren);
+		vBlock.push_back(p);
+
 		blockCount++;
 		enableRotate = true;
 		rotatePos = 0;
@@ -274,14 +276,8 @@ void Game::moveDown() {
 		int cDelta[4] = { 0 };
 
 		int currIndex = blockCount - 1;
-		pBlock[currIndex]->getPos(row, col);
-		/*
-		std::cout << "getPos 1" << std::endl;
-		std::cout << "row: " << row[0]/h << ", col: " << col[0]/w << std::endl;
-		std::cout << "row: " << row[1]/h << ", col: " << col[1]/w << std::endl;
-		std::cout << "row: " << row[2]/h << ", col: " << col[2]/w << std::endl;
-		std::cout << "row: " << row[3]/h << ", col: " << col[3]/w << std::endl;
-		*/
+		//pBlock[currIndex]->getPos(row, col);
+		vBlock.at(currIndex)->getPos(row, col);
 
 		// check bottom boundary of window
 		if (row[0] >= rLimit || row[1] >= rLimit || row[2] >= rLimit || row[3] >= rLimit) {
@@ -293,18 +289,13 @@ void Game::moveDown() {
 		}
 		else if (checkBottom(row, col)) {
 			// update position
-			pBlock[currIndex]->updatePos(rDelta, cDelta);
+			//pBlock[currIndex]->updatePos(rDelta, cDelta);
+			vBlock.at(currIndex)->updatePos(rDelta, cDelta);
 		}
 
 		// update occupancy
-		pBlock[currIndex]->getPos(row, col);
-		/*
-		std::cout << "getPos 2" << std::endl;
-		std::cout << "row: " << row[0] / h << ", col: " << col[0] / w << std::endl;
-		std::cout << "row: " << row[1] / h << ", col: " << col[1] / w << std::endl;
-		std::cout << "row: " << row[2] / h << ", col: " << col[2] / w << std::endl;
-		std::cout << "row: " << row[3] / h << ", col: " << col[3] / w << std::endl;
-		*/
+		//pBlock[currIndex]->getPos(row, col);
+		vBlock.at(currIndex)->getPos(row, col);
 
 		if (justRemoved) {
 			justRemoved = false;
@@ -325,7 +316,8 @@ void Game::moveLeftRight() {
 		int cDelta[4] = { cDel, cDel, cDel, cDel };
 
 		int currIndex = blockCount - 1;
-		pBlock[currIndex]->getPos(row, col);
+		//pBlock[currIndex]->getPos(row, col);
+		vBlock.at(currIndex)->getPos(row, col);
 		//std::cout << "getPos 3" << std::endl;
 
 		int rNext[4], cNext[4];
@@ -343,32 +335,35 @@ void Game::moveLeftRight() {
 			if (col[0] >= cLimit || col[1] >= cLimit || col[2] >= cLimit || col[3] >= cLimit) {
 				if (cDel < 0) { 
 					// update position
-					pBlock[currIndex]->updatePos(rDelta, cDelta);
+					//pBlock[currIndex]->updatePos(rDelta, cDelta);
+					vBlock.at(currIndex)->updatePos(rDelta, cDelta);
 				}
 			}
 			// left window boundary
 			else if (col[0] <= 0 || col[1] <= 0 || col[2] <= 0 || col[3] <= 0) {
 				if (cDel > 0) { 
 					// update position
-					pBlock[currIndex]->updatePos(rDelta, cDelta);
+					//pBlock[currIndex]->updatePos(rDelta, cDelta);
+					vBlock.at(currIndex)->updatePos(rDelta, cDelta);
 				}
 			}
 			// check for collisions
 			else {
 				if (checkCollision(row, col, rNext, cNext)) {
 					// update position
-					pBlock[currIndex]->updatePos(rDelta, cDelta);
+					//pBlock[currIndex]->updatePos(rDelta, cDelta);
+					vBlock.at(currIndex)->updatePos(rDelta, cDelta);
 				}
 			}
 		}
 		// update occupancy
-		pBlock[currIndex]->getPos(row, col);
+		//pBlock[currIndex]->getPos(row, col);
+		vBlock.at(currIndex)->getPos(row, col);
 		updateOcc(row, col, rDelta, cDelta);
 
 		moveLeftRightCount = 0;
 	}
 }
-
 
 void Game::rotate() {
 	int currIndex = blockCount - 1;
@@ -379,7 +374,8 @@ void Game::rotate() {
 			int row[4], col[4], rNext[4], cNext[4], rDelta[4], cDelta[4];
 
 			int currIndex = blockCount - 1;
-			pBlock[currIndex]->getPos(row, col);
+			//pBlock[currIndex]->getPos(row, col);
+			vBlock.at(currIndex)->getPos(row, col);
 
 			for (int i = 0; i < 4; i++) {
 				// get rDelta and cDelta
@@ -434,18 +430,18 @@ void Game::rotate() {
 			}
 
 			// update position
-			pBlock[currIndex]->updatePos(rDelta, cDelta);
+			//pBlock[currIndex]->updatePos(rDelta, cDelta);
+			vBlock.at(currIndex)->updatePos(rDelta, cDelta);
 
 			// update occupancy
-			pBlock[currIndex]->getPos(row, col);
+			//pBlock[currIndex]->getPos(row, col);
+			vBlock.at(currIndex)->getPos(row, col);
 			updateOcc(row, col, rDelta, cDelta);
 
 			rotateCount = 0;
 		}
 	}
 }
-
-////////////////////////////////////////////////////////////
 
 bool Game::checkBottom(int *row, int *col) {
 	bool canMove = false;
@@ -489,8 +485,6 @@ bool Game::checkCollision(int *row, int *col, int *rNext, int *cNext) {
 	}
 	return canMove;
 }
-
-///////////////////////////////////////////
 
 int Game::findMin(int *arr) {
 	int min = arr[0];
