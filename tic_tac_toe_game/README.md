@@ -9,7 +9,7 @@ This program consists of a Game Class that takes care of all the game logic. All
 I used a 3x3 string matrix to represent the board for Tic-Tac-Toe. The position at each location can be accessed by the indices of the matrix or a number from 0 to 8 (variable named <strong>move</strong>). I've used both "row/column" and "move" indexing interchangebly throughout the entire program. You may use <strong>getMove(int row, int col)</strong>, <strong>getRow(int move)</strong>, and <strong>getCol(int move)</strong> functions to convert between these two methods. 
 
 <div class="center">
-	<img src="/tic_tac_toe_game/images/tic-tac-toe-1.png" alt="" height="200"><br>
+	<center><img src="/tic_tac_toe_game/images/tic-tac-toe-1.png" alt="" height="200"></center><br>
   <p class="caption">Row/Column and Move Indexing</p>
 </div>
 
