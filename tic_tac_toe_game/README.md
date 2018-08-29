@@ -20,7 +20,7 @@ To check for a winner in the game, the sequence count should be either 3 in a ro
   <img src="/tic_tac_toe_game/images/tic-tac-toe-4.png" alt="" height="200">
   <img src="/tic_tac_toe_game/images/tic-tac-toe-2.png" alt="" height="200">
   <br>
-  Row &nbps; &nbps; &nbps; &nbps; Column &nbps; &nbps; &nbps; &nbps; Diagonal
+  Row             Column               Diagonal
 </p>
 
 When the state of the game is incomplete, this means that 1) the game is not yet completed (or in other words, the positions of the board have not been filled up) and 2) there is no winner at the current moment. For incomplete, I checked for <strong>checkWinner() == 0</strong> and <strong>isBoardFull() == 0</strong>. Similarly for a tie, there should be no winner for the game, but in contrast to being incomplete, the board should be filled, meaning that <strong>isBoardFull() == 1</strong>. The <strong>checkBoardState()</strong> returns -1 if incomplete, 0 if tied, 1 if "x" player won, and 2 if "o" player won.
