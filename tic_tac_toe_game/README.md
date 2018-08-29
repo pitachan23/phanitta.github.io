@@ -35,3 +35,4 @@ The mechanics of the game is very straightforward so far. The most complicated p
 
 [include diagram]
 
+To be continued...
