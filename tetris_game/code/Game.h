@@ -42,7 +42,8 @@ public:
 private:
 	SDL_Window * window = nullptr;
 	SDL_Renderer *ren = nullptr;
-	Block *pBlock[100];
+	//Block *pBlock[100];
+	std::vector<Block*> vBlock;
 	int blockCount = 0;
 
 	// true if key is pressed
