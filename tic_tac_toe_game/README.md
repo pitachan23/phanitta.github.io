@@ -9,7 +9,7 @@ This program consists of a Game Class that takes care of all the game logic. All
 I used a 3x3 string matrix to represent the board for Tic-Tac-Toe. The position at each location can be accessed by the indices of the matrix or a number from 0 to 8 (variable named <strong>move</strong>). I've used both "row/column" and "move" indexing interchangebly throughout the entire program. You may use <strong>getMove(int row, int col)</strong>, <strong>getRow(int move)</strong>, and <strong>getCol(int move)</strong> functions to convert between these two methods. 
 
 <div class="center">
-	<img src="/tic_tac_toe_game/images/tic-tac-toe-1.png" alt="" height="250"><br>
+	<img src="/tic_tac_toe_game/images/tic-tac-toe-1.png" alt="" height="200"><br>
   <p class="caption">Row/Column and Move Indexing</p>
 </div>
 
@@ -17,15 +17,15 @@ To check for a winner in the game, the sequence count should be either 3 in a ro
 
 <div class="row">
 					<div class="column-three center">
-						<img src="/tic_tac_toe_game/images/tic-tac-toe-3.png" alt="" height="250"><br>
+						<img src="/tic_tac_toe_game/images/tic-tac-toe-3.png" alt="" height="200"><br>
 						<p class="caption">Row</p>
 				  </div>
 				  <div class="column-three center">
-				    		<img src="/tic_tac_toe_game/images/tic-tac-toe-4.png" alt="" height="250"><br>
+				    		<img src="/tic_tac_toe_game/images/tic-tac-toe-4.png" alt="" height="200"><br>
 						<p class="caption">Column</p>
 				  </div>
 				  <div class="column-three center">
-				    		<img src="/tic_tac_toe_game/images/tic-tac-toe-2.png" alt="" height="250"><br>
+				    		<img src="/tic_tac_toe_game/images/tic-tac-toe-2.png" alt="" height="200"><br>
 						<p class="caption">Diagonal</p>
 				  </div>
 </div>
