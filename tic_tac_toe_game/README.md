@@ -1,5 +1,5 @@
 <!-- link to main stylesheet -->
-		<link rel="stylesheet" type="text/css" href="/style.css">
+<link rel="stylesheet" type="text/css" href="/style.css">
 
 <h1> Tic-Tac-Toe Game </h1>
 <h2> Player vs. Computer </h2>
